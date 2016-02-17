@@ -42,9 +42,10 @@
 - (NSString *)yajl_JSONStringWithOptions:(YAJLGenOptions)options indentString:(NSString *)indentString {
   YAJLGen *gen = [[YAJLGen alloc] initWithGenOptions:options indentString:indentString];
   [gen object:self];
-  NSString *buffer = [[gen buffer] retain];
-  [gen release];
-  return [buffer autorelease];
+    return [gen buffer];
+//  NSString *buffer = [[gen buffer] retain];
+//  [gen release];
+//  return [buffer autorelease];
 }
 
 #pragma mark Parsing
@@ -71,9 +72,10 @@
   }
   
   YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:options error:error];
-  id root = [document.root retain];
-  [document release];
-  return [root autorelease];
+    return document.root;
+//  id root = [document.root retain];
+//  [document release];
+//  return [root autorelease];
 }
 
 @end

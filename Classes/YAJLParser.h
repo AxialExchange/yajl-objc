@@ -140,7 +140,7 @@ typedef NS_ENUM(NSUInteger, YAJLParserStatus) {
   
   yajl_handle handle_;
   
-  id<YAJLParserDelegate> delegate_; // weak
+  __unsafe_unretained id<YAJLParserDelegate> delegate_; // weak
     
   YAJLParserOptions parserOptions_;
 
